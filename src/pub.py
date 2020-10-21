@@ -1,9 +1,9 @@
 class Pub:
     
-    def __init__(self, name, till):
+    def __init__(self, name, till, drinks_list):
         self.name = name
         self.till = till
-        self.drinks = []
+        self.drinks = drinks_list
 
     def add_money(self, amount):
         self.till += amount
