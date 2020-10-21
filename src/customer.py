@@ -4,4 +4,7 @@ class Customer:
         self.name = name
         self.wallet = wallet
 
+    def remove_money(self, amount):
+        self.wallet -= amount
+
     
