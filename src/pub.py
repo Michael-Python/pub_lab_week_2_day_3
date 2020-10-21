@@ -4,3 +4,6 @@ class Pub:
         self.name = name
         self.till = till
         self.drinks = []
+
+    def add_money(self, amount):
+        self.till += amount
