@@ -3,7 +3,6 @@ from src.customer import Customer
 
 class TestCustomer(unittest.TestCase):
 
-
     def setUp(self):
         self.customer = Customer("Michael Sinclair", 1000.00)
 
@@ -13,4 +12,3 @@ class TestCustomer(unittest.TestCase):
     def test_can_remove_money(self):
         self.customer.remove_money(10.00)
         self.assertEqual(990.00, self.customer.wallet)
-

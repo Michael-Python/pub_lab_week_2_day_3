@@ -6,7 +6,8 @@ from src.drink import Drink
 class TestPub(unittest.TestCase):
     
     def setUp(self):
-        self.drink_1 = Drink("White Russian", 10)
+        # this sets up the list with two list items
+        self.drink_1 = Drink("Brew Dog", 5)
         self.drink_2 = Drink("Dolce Banana", 15)
         
         drinks = [self.drink_1, self.drink_2]
@@ -32,7 +33,13 @@ class TestPub(unittest.TestCase):
 
     def test_can_find_drink_by_name(self):
         self.pub.find_drink_by_name(self.drink_1)
-        self.assertEqual("White Russian", self.drink_1.name)
+        self.assertEqual("Brew Dog", self.drink_1.name)
 
-    # def test_sell_drink_to_customer(self):
-    #     customer = Customer("Michael Sinclair", 1000)
+    def test_sell_drink_to_customer(self):
+        
+        customer = Customer("Michael Sinclair", 1000)
+        self.pub.sell_drink_to_customer("Brew Dog", customer)
+        # don't need 'self'.customer because customer is an instance in this method
+        self.assertEqual(995, customer.wallet)
+        self.assertEqual(105, self.pub.till)
+        

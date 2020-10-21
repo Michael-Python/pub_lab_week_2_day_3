@@ -19,3 +19,10 @@ class Pub:
             if drink.name == name_of_drink:
                 return drink
 
+    def sell_drink_to_customer(self, name_of_drink, customer):
+        # know which drink object we need
+        drink_to_buy = self.find_drink_by_name(name_of_drink)
+        # remove money from wallet
+        customer.remove_money(drink_to_buy.price)
+        # add money to till
+        self.add_money(drink_to_buy.price)
